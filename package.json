@@ -1,0 +1,57 @@
+{
+  "name": "play-with-pg",
+  "version": "1.0.0",
+  "description": "Play with pg and knex.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "test-serial": "ava -s",
+    "dump": "pg_dump -d 'postgres://postgres:postgres@localhost:5432/postgres' --no-owner --no-acl --column-inserts --disable-dollar-quoting --no-tablespaces > ./db/dump.sql",
+    "watch": "ava --watch",
+    "migrate": "knex-migrate up",
+    "seed": "knex seed:run",
+    "migrate:down": "knex-migrate down",
+    "migrate:drop": "knex-migrate down --to 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subuta/play-with-sqlite3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subuta/play-with-sqlite3/issues"
+  },
+  "homepage": "https://github.com/subuta/play-with-sqlite3#readme",
+  "dependencies": {
+    "ava": "^1.4.1",
+    "bluebird": "^3.5.4",
+    "common-tags": "^1.8.0",
+    "knex": "^0.16.5",
+    "lodash": "^4.17.11",
+    "pg": "^7.11.0",
+    "pg-connection-string": "^2.0.0",
+    "short-uuid": "^3.1.1",
+    "waait": "^1.0.4"
+  },
+  "devDependencies": {
+    "bcrypt": "^3.0.6",
+    "esm": "^3.2.25",
+    "knex-migrate": "^1.7.2"
+  },
+  "ava": {
+    "files": [
+      "lib/**/*.spec.js"
+    ],
+    "sources": [
+      "lib/**/*.js",
+      "!lib/**/*.spec.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "require": [
+      "esm"
+    ]
+  }
+}
