@@ -1,7 +1,7 @@
 # play-with-pg
 Play with pg and knex.
 
-!!!CAUTION!!!
+:rotating_light:CAUTION:rotating_light:
 
 Running test will create temporary database into postgres(for concurrent execution).
 You should check these database's are cleaned correctly, They might be remains in case of test failure or `drop database command` failure :(
