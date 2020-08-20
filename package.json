@@ -36,7 +36,7 @@
     "waait": "^1.0.4"
   },
   "devDependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "esm": "^3.2.25",
     "knex-migrate": "^1.7.2"
   },
